@@ -1,7 +1,8 @@
-import { Router } from 'express';
-import routerTitle from './TitleRouter/titleRouter.routes';
+import { Router } from "express";
+import routerCreate from "./RoutesCreate.routes";
+
 const router = Router();
 
-router.use("/admin", routerTitle)
+router.use('/create', routerCreate)
 
-export default router
+export default router;

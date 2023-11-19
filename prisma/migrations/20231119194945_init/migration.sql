@@ -44,7 +44,7 @@ CREATE TABLE `paragrafos` (
     `text_paragrafo` VARCHAR(191) NOT NULL,
     `image_paragrafo` VARCHAR(191) NULL,
     `alt_paragrafo` VARCHAR(191) NULL,
-    `title` VARCHAR(191) NOT NULL,
+    `title_paragrafo` VARCHAR(191) NOT NULL,
 
     UNIQUE INDEX `paragrafos_id_text_key`(`id_text`),
     PRIMARY KEY (`id_paragrafo`)

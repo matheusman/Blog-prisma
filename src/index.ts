@@ -3,7 +3,7 @@ import path from 'path';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import "express-async-errors";
-import router from './Routes/routes.routes';
+import router from './Routes/Routes.routes';
 import { AppError } from './error/AppError';
 
 dotenv.config();

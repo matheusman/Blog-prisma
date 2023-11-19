@@ -4,8 +4,8 @@ import { IMetaTag } from "../../interface/IMetaTagCreate";
 import { checkInterface } from "../../../../interface/Generics";
 import { AppError } from "../../../../error/AppError";
 
-class MetaTagCreateHandleController {
-    async execute (req : Request, res : Response) {
+export class MetaTagCreateHandleController {
+    async handle (req : Request, res : Response) {
         
         const meta_tag = req.body;
 

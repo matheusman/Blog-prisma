@@ -11,58 +11,58 @@ datasource db {
 }
 
 model Title {
-  id_title Int @id @default(autoincrement())
-  title String @unique
-  subtitle String
-  path_title_img Path_title_img?
-  text Text?
-  meta_tag Meta_tag?
+  id_title        Int @id @default(autoincrement())
+  title           String @unique
+  subtitle        String
+  path_title_img  Path_title_img?
+  text            Text?
+  meta_tag        Meta_tag?
   @@unique([id_title, title])
   @@map("titles")
 }
 
 model Meta_tag {
-  id_title Int
-  keyword String 
-  title_meta String 
-  description String
-  title Title @relation(fields: [id_title, title_meta], references: [id_title, title])
+  id_title      Int
+  keyword       String 
+  title_meta    String 
+  description   String
+  title         Title @relation(fields: [id_title, title_meta], references: [id_title, title])
   @@unique([id_title, title_meta])
   @@map("metas_tags")
 }
 
 model Path_title_img  {
-  id_title Int @unique
-  image_title String
-  alt_title String
-  title Title @relation(fields: [id_title], references: [id_title])
+  id_title      Int     @unique
+  image_title   String
+  alt_title     String
+  title         Title   @relation(fields: [id_title], references: [id_title])
   @@map("paths_titles_imgs")
 }
 
 model Text {
-  id_text Int @id @default(autoincrement())
-  id_title Int @unique
-  title Title @relation(fields: [id_title], references: [id_title])
+  id_text      Int    @id   @default(autoincrement())
+  id_title     Int    @unique
+  title        Title  @relation(fields: [id_title], references: [id_title])
   paragrafos Paragrafo[]
   @@map("texts")
 }
 
 model Paragrafo {
-  id_text Int @unique
-  id_paragrafo Int @id @default(autoincrement())
-  text Text @relation(fields: [id_text], references: [id_text])
-  text_paragrafo String
+  id_text         Int   @unique
+  id_paragrafo    Int   @id    @default(autoincrement())
+  text            Text  @relation(fields: [id_text], references: [id_text])
+  text_paragrafo  String
   image_paragrafo String?
-  alt_paragrafo String?
-  title String
+  alt_paragrafo   String?
+  title_paragrafo String
   list List[]
   @@map("paragrafos")
 }
 
 model List {
-  id_paragrafo Int @unique
-  paragrafo Paragrafo @relation(fields: [id_paragrafo], references: [id_paragrafo])
-  title_list String?
-  paragrafo_list String
+  id_paragrafo    Int @unique
+  paragrafo       Paragrafo @relation(fields: [id_paragrafo], references: [id_paragrafo])
+  title_list      String?
+  paragrafo_list  String
   @@map("lists")
 }
