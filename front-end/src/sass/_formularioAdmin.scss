@@ -1,0 +1,29 @@
+.text-area {
+  width: 1000px;
+  height: 500px;
+  padding: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  font-size: 20px;
+}
+
+.form-admin {
+  margin: auto;
+  width: 1000px;
+  padding-top: 30px;
+}
+
+#button-admin {
+  padding: 20px;
+  width: 150px;
+  color: rgb(231, 231, 231);
+  background-color: rgb(8, 59, 59);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.5s;
+  &:hover {
+    background-color: rgb(4, 43, 43);
+  }
+}
